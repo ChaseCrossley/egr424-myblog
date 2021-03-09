@@ -28,6 +28,8 @@ async function getNewBlog() {
     await getDataWithFetch(`https://jsonplaceholder.typicode.com/posts/${Math.floor(Math.random() * 100)}`)
 }
 
+getNewBlog();
+
 app.get('/', (req, res) => {
     getNewBlog();
     res.render('index', {title: 'Home', blogs});
